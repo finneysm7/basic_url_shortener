@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resource :urls
+  resources :urls
 end

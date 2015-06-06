@@ -1,0 +1,10 @@
+<h1>Shortened urls</h1>
+<ul>
+	<% @urls.each do |url| %>
+	<li>New Url: <%= link_to url.name, url.link%><br>
+		Original Url: <%= link_to url.link, url.link%><br>
+	</li>
+	<%end%>
+</ul>
+
+<%= link_to "New Url", new_url_url%>

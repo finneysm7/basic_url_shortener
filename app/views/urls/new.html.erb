@@ -1,0 +1,17 @@
+<h2>New Url</h2>
+
+<%= render "layouts/errors"%>
+
+<form action="<%= urls_url %>" method="post">
+	<%= auth_token_input %>
+	
+	<label>
+		Link
+		<input type="text" name="url[link]" value="<%= @url.link %>">
+	</label><br>
+	
+	
+	<input type="hidden" name="url[name]" value="dummy_value">
+	
+	<input type="submit" value="Create New Url">
+</form>
