@@ -1,0 +1,8 @@
+<h1>Here are the statistics for <%= @url.link %></h1>
+<h2>Total Visits: <%= @stats.count %></h2>
+<h3>Visited On:</h3>
+<ul>
+	<% @stats.each do |stat| %>
+		<li>Visited on: <%= stat.created_at %></li>
+	<%end%>
+</ul>

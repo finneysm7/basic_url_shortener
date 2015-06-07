@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150606204727) do
+ActiveRecord::Schema.define(version: 20150606233029) do
+
+  create_table "stats", force: true do |t|
+    t.integer  "visits"
+    t.integer  "url_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stats", ["url_id"], name: "index_stats_on_url_id"
 
   create_table "urls", force: true do |t|
     t.string   "link",       null: false
