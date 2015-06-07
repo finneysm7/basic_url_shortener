@@ -1,8 +1,8 @@
 <h1>Shortened urls</h1>
 <ul>
 	<% @urls.each do |url| %>
-	<li>New Url: <%= link_to url.name, url.link%><br>
-		Original Url: <%= link_to url.link, url.link%><br>
+	<li>New Url: <div class='stat clickable' data-urlid='<%= url.id%>'><%= link_to url.name, url.link%></div><br>
+		Original Url: <div class='otherstat clickable' data-urlid='<%= url.id%>'><%= link_to url.link, url.link%></div><br>
 		<%= link_to "Statistics for this site", url_stats_url(url)%>
 	</li>
 	<%end%>
