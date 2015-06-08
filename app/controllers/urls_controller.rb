@@ -8,9 +8,14 @@ class UrlsController < ApplicationController
   end
   
   def create
+    if Rails.env.development?
+      host = "http://localhost:3000"
+    else
+      host = "productionhost"
+    end
     @url = Url.new(url_params)
     if @url.save
-      @url.update_attributes(name: "http://localhost:3000/urls/#{@url.id}")
+      @url.update_attributes(name: "#{host}/urls/#{@url.id}")
       redirect_to urls_url
     else
       flash.now[:errors] = @url.errors.full_messages

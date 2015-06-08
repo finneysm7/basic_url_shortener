@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150606233029) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "stats", force: true do |t|
     t.integer  "visits"
     t.integer  "url_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150606233029) do
     t.datetime "updated_at"
   end
 
-  add_index "stats", ["url_id"], name: "index_stats_on_url_id"
+  add_index "stats", ["url_id"], name: "index_stats_on_url_id", using: :btree
 
   create_table "urls", force: true do |t|
     t.string   "link",       null: false
