@@ -11,7 +11,7 @@ class UrlsController < ApplicationController
     if Rails.env.development?
       host = "http://localhost:3000"
     else
-      host = "productionhost"
+      host = "https://obscure-stream-6430.herokuapp.com/"
     end
     @url = Url.new(url_params)
     if @url.save
